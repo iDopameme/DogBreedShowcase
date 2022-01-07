@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dogbreedshowcase.listadapters.DogBreedAdapter
 import com.example.dogbreedshowcase.api.recyclerViewLineDivider
@@ -60,7 +61,8 @@ class MainDogFragment : Fragment() {
 
         dogBreedAdapter = DogBreedAdapter(requireContext(), dogBreeds, object : DogBreedAdapter.ItemClickListener{
             override fun onItemClick(dogBreeds: DogBreeds) {
-
+                val action = MainDogFragmentDirections.actionDogImagesFromList(dogBreeds.breed)
+                findNavController().navigate(action)
             }
         })
 

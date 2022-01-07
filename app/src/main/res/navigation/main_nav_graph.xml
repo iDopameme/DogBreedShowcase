@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/galleryFragment"
         android:name="com.example.dogbreedshowcase.ui.gallery.GalleryFragment"
-        android:label="Gallery Screen" />
+        android:label="Gallery Screen" >
+        <argument
+            android:name="dogString"
+            app:argType="string" />
+    </fragment>
 </navigation>
