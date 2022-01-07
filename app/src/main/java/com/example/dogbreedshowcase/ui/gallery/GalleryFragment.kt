@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.dogbreedshowcase.databinding.GalleryFragmentBinding
 import com.example.dogbreedshowcase.listadapters.DogImageAdapter
 import com.example.dogbreedshowcase.model.DogImage
+import com.example.dogbreedshowcase.ui.maindog.MainDogFragment
 
 class GalleryFragment : Fragment() {
     private lateinit var viewModel: GalleryViewModel
@@ -20,6 +21,8 @@ class GalleryFragment : Fragment() {
 
     private var _binding: GalleryFragmentBinding? = null
     private val binding get() = _binding!!
+
+    private var dogString: String? = null
 
 
     private val dogImages = mutableListOf<DogImage>()
@@ -35,6 +38,12 @@ class GalleryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        arguments?.let {
+            val safeArgs = GalleryFragmentArgs.fromBundle(it)
+            dogString = safeArgs.dogString
+        }
+
         viewModel = ViewModelProvider(this).get(GalleryViewModel::class.java)
 
         viewModel.images.observe(viewLifecycleOwner, { images ->
@@ -62,6 +71,6 @@ class GalleryFragment : Fragment() {
         binding.dogImageRecyclerview.adapter = dogImageAdapter
         binding.dogImageRecyclerview.layoutManager = GridLayoutManager(requireContext(), 2)
 
-        viewModel.getImages("dogs")
+        dogString?.let { viewModel.getImages(it) }
     }
 }
