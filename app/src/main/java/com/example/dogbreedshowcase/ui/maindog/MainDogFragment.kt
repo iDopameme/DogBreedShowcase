@@ -24,7 +24,6 @@ class MainDogFragment : Fragment() {
     private val binding get() = _binding!!
 
 
-
     private val dogBreeds = mutableListOf<DogBreeds>()
 
     override fun onCreateView(
@@ -59,12 +58,16 @@ class MainDogFragment : Fragment() {
             }
         })
 
-        dogBreedAdapter = DogBreedAdapter(requireContext(), dogBreeds)
+        dogBreedAdapter = DogBreedAdapter(requireContext(), dogBreeds, object : DogBreedAdapter.ItemClickListener{
+            override fun onItemClick(dogBreeds: DogBreeds) {
+
+            }
+        })
+
 
         context?.let {
             binding.dogsRecyclerview.recyclerViewLineDivider(it)
         }
-
 
         binding.dogsRecyclerview.adapter = dogBreedAdapter
         binding.dogsRecyclerview.layoutManager = LinearLayoutManager(requireContext())

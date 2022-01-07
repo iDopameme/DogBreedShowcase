@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/MainDogFragment">
+    app:startDestination="@id/mainDogFragment">
     <fragment
-        android:id="@+id/MainDogFragment"
+        android:id="@+id/mainDogFragment"
         android:name="com.example.dogbreedshowcase.ui.maindog.MainDogFragment"
-        android:label="MainDogFragment" >
+        android:label="Dog Breed screen">
         <action
             android:id="@+id/actionDogImagesFromList"
             app:destination="@id/galleryFragment" />
@@ -15,5 +15,5 @@
     <fragment
         android:id="@+id/galleryFragment"
         android:name="com.example.dogbreedshowcase.ui.gallery.GalleryFragment"
-        android:label="GalleryFragment" />
+        android:label="Gallery Screen" />
 </navigation>

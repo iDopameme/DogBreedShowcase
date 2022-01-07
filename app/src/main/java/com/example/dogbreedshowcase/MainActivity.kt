@@ -3,6 +3,7 @@ package com.example.dogbreedshowcase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -26,16 +27,21 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(navController.graph)
 
-        setSupportActionBar(findViewById(R.id.topAppBar))
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         findViewById<Toolbar>(R.id.topAppBar).setupWithNavController(navController, appBarConfiguration)
+    }
+
+    override fun setActionBar(toolbar: android.widget.Toolbar?) {
+        setSupportActionBar(findViewById(R.id.topAppBar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.top_app_bar, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onSupportNavigateUp(): Boolean {

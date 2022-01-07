@@ -13,7 +13,9 @@ import com.example.dogbreedshowcase.model.DogImage
 import com.example.dogbreedshowcase.model.Favorites
 import com.squareup.picasso.Picasso
 
-class DogBreedAdapter(private val context: Context, private val dogBreeds: List<DogBreeds>
+class DogBreedAdapter(private val context: Context,
+                      private val dogBreeds: List<DogBreeds>,
+                      private val itemClickListener: ItemClickListener
 ) : RecyclerView.Adapter<DogBreedAdapter.ViewHolder>() {
 
     interface ItemClickListener {
@@ -36,6 +38,9 @@ class DogBreedAdapter(private val context: Context, private val dogBreeds: List<
 
         fun bind(dogBreeds: DogBreeds) {
             dogBreedName.text = dogBreeds.breed
+            itemView.setOnClickListener {
+                itemClickListener.onItemClick(dogBreeds)
+            }
         }
     }
 
