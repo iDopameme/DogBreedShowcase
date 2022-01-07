@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DogBreedShowcase</string>
+    <string name="dog_breed">Dog Breed</string>
+    <string name="dog_image">Dog_image</string>
+    <string name="favorite_button_dogs">favorite_button_dogs</string>
+    <string name="error">Error!!</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+    <string name="content_description_favorite">Favorite</string>
+    <string name="content_description_share">Share</string>
+    <string name="page_title">Dogs</string>
+    <string name="sub_breed">Sub Breed</string>
+</resources>
