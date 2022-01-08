@@ -10,4 +10,6 @@
     <string name="content_description_share">Share</string>
     <string name="page_title">Dogs</string>
     <string name="sub_breed">Sub Breed</string>
+    <string name="more">More</string>
+    <string name="content_description_more">More</string>
 </resources>

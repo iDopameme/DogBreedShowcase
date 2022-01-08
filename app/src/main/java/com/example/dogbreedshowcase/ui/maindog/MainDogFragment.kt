@@ -44,7 +44,7 @@ class MainDogFragment : Fragment() {
             dogBreeds.clear()
             dogBreeds.addAll(breeds)
             dogBreedAdapter.notifyDataSetChanged()
-            binding.dogsRecyclerview.smoothScrollToPosition(numElements)
+            //binding.dogsRecyclerview.smoothScrollToPosition(numElements)
         })
         viewModel.isLoading.observe(viewLifecycleOwner, { isLoading ->
             Log.i(TAG, "isLoading $isLoading")

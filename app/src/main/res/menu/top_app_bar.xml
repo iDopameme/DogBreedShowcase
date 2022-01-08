@@ -7,6 +7,7 @@
         android:icon="@drawable/baseline_favorite_white_24"
         android:title="@string/favorite"
         android:contentDescription="@string/content_description_favorite"
+        android:visible="false"
         app:showAsAction="ifRoom"/>
 
     <item
@@ -14,6 +15,7 @@
         android:icon="@drawable/baseline_share_white_24"
         android:title="@string/share"
         android:contentDescription="@string/content_description_share"
+        android:visible="false"
         app:showAsAction="ifRoom"/>
 
 </menu>
