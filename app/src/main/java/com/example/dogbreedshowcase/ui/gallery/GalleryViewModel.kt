@@ -1,7 +1,9 @@
 package com.example.dogbreedshowcase.ui.gallery
 
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -48,4 +50,10 @@ class GalleryViewModel : ViewModel() {
             DogImage(imageUrl = it)
         }
     }
+
+    // add favorite &
+    fun displayPopupOptions(dogImage: DogImage) {
+        Log.e(TAG, "TESTING IF THE BUTTON CLICK WORKS")
+    }
+
 }

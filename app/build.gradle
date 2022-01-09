@@ -50,7 +50,8 @@ dependencies {
     // Images
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    // RecyclerView Library -- [Unused]
+    // RecyclerView Libraries -- [Unused]
+    implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
     implementation 'com.github.lisawray.groupie:groupie:2.9.0'
     implementation 'com.github.lisawray.groupie:groupie-viewbinding:2.9.0'
 

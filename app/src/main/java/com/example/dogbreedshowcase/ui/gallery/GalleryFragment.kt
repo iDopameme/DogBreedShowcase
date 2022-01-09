@@ -6,20 +6,18 @@ import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.appcompat.view.ActionMode
-import androidx.databinding.DataBindingUtil.inflate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.dogbreedshowcase.R
 import com.example.dogbreedshowcase.databinding.GalleryFragmentBinding
-import com.example.dogbreedshowcase.databinding.MainDogFragmentBinding.inflate
 import com.example.dogbreedshowcase.listadapters.DogImageAdapter
 import com.example.dogbreedshowcase.model.DogImage
-import com.example.dogbreedshowcase.ui.maindog.MainDogFragment
 
 class GalleryFragment : Fragment(), ActionMode.Callback {
     private lateinit var viewModel: GalleryViewModel
     private lateinit var dogImageAdapter: DogImageAdapter
+//  private lateinit var tracker: SelectionTracker
 
     private var actionMode: ActionMode? = null
 
@@ -37,6 +35,8 @@ class GalleryFragment : Fragment(), ActionMode.Callback {
         savedInstanceState: Bundle?,
     ): View {
         _binding = GalleryFragmentBinding.inflate(inflater)
+
+
         return binding.root
     }
 
@@ -70,9 +70,14 @@ class GalleryFragment : Fragment(), ActionMode.Callback {
             }
         })
 
-        dogImageAdapter = DogImageAdapter(requireContext(), dogImages)
+        dogImageAdapter = DogImageAdapter(requireContext(), dogImages, object : DogImageAdapter.OnClickListener {
+            override fun onImageClick(dogImage: DogImage) {
+                viewModel.displayPopupOptions(dogImage)
+            }
+        })
 
         binding.dogImageRecyclerview.adapter = dogImageAdapter
+
         binding.dogImageRecyclerview.layoutManager = GridLayoutManager(requireContext(), 2)
 
         dogString?.let { viewModel.getImages(it) }
@@ -104,5 +109,6 @@ class GalleryFragment : Fragment(), ActionMode.Callback {
     override fun onDestroyActionMode(mode: ActionMode?) {
         actionMode = null
     }
+
 
 }

@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Dopam/AndroidStudioProjects/DogBreedShowcase/app/src/main/res/drawable/baseline_favorite_24.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Dopam/AndroidStudioProjects/DogBreedShowcase/app/src/main/res/drawable/baseline_menu_24.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Dopam/AndroidStudioProjects/DogBreedShowcase/app/src/main/res/drawable/image_backdrop.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Dopam/AndroidStudioProjects/DogBreedShowcase/app/src/main/res/drawable/line_recycler_view_divider.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Dopam/AndroidStudioProjects/DogBreedShowcase/app/src/main/res/layout/gallery_fragment.xml" value="0.3625" />
         <entry key="..\:/Users/Dopam/AndroidStudioProjects/DogBreedShowcase/app/src/main/res/layout/gallery_view_item.xml" value="0.3625" />
@@ -14,6 +15,7 @@
         <entry key="..\:/Users/Dopam/AndroidStudioProjects/DogBreedShowcase/app/src/main/res/layout/main_dog_view_item.xml" value="0.5609375" />
         <entry key="..\:/Users/Dopam/AndroidStudioProjects/DogBreedShowcase/app/src/main/res/layout/main_dog_view_subitem.xml" value="0.3625" />
         <entry key="..\:/Users/Dopam/AndroidStudioProjects/DogBreedShowcase/app/src/main/res/menu/contextual_action_bar.xml" value="0.3625" />
+        <entry key="..\:/Users/Dopam/AndroidStudioProjects/DogBreedShowcase/app/src/main/res/menu/header_menu.xml" value="0.3625" />
         <entry key="..\:/Users/Dopam/AndroidStudioProjects/DogBreedShowcase/app/src/main/res/menu/top_app_bar.xml" value="0.3625" />
       </map>
     </option>
