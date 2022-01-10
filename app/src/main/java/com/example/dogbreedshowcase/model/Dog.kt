@@ -24,7 +24,8 @@ data class DogSubBreed(
 )
 
 data class DogImage(
-    val imageUrl: String
+    val imageUrl: String,
+    var favoriteImage: Boolean = false
 )
 
 class ExpandableBreedsModel {

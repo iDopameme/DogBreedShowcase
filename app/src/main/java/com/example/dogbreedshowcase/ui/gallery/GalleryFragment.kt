@@ -4,6 +4,8 @@ import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.AdapterView
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.view.ActionMode
 import androidx.fragment.app.Fragment
@@ -14,12 +16,9 @@ import com.example.dogbreedshowcase.databinding.GalleryFragmentBinding
 import com.example.dogbreedshowcase.listadapters.DogImageAdapter
 import com.example.dogbreedshowcase.model.DogImage
 
-class GalleryFragment : Fragment(), ActionMode.Callback {
+class GalleryFragment : Fragment() {
     private lateinit var viewModel: GalleryViewModel
     private lateinit var dogImageAdapter: DogImageAdapter
-//  private lateinit var tracker: SelectionTracker
-
-    private var actionMode: ActionMode? = null
 
     private var _binding: GalleryFragmentBinding? = null
     private val binding get() = _binding!!
@@ -36,9 +35,33 @@ class GalleryFragment : Fragment(), ActionMode.Callback {
     ): View {
         _binding = GalleryFragmentBinding.inflate(inflater)
 
+        registerForContextMenu(binding.dogImageRecyclerview)
 
         return binding.root
     }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu,
+        v: View,
+        menuInfo: ContextMenu.ContextMenuInfo?,
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        val inflater = MenuInflater(requireContext())
+        inflater.inflate(R.menu.header_menu, menu)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.share -> {
+                true
+            }
+            R.id.favorite -> {
+                true
+            }
+            else -> {super.onContextItemSelected(item)}
+        }
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -72,7 +95,7 @@ class GalleryFragment : Fragment(), ActionMode.Callback {
 
         dogImageAdapter = DogImageAdapter(requireContext(), dogImages, object : DogImageAdapter.OnClickListener {
             override fun onImageClick(dogImage: DogImage) {
-                viewModel.displayPopupOptions(dogImage)
+                TODO("Not yet implemented")
             }
         })
 
@@ -82,33 +105,4 @@ class GalleryFragment : Fragment(), ActionMode.Callback {
 
         dogString?.let { viewModel.getImages(it) }
     }
-
-    override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
-        mode?.menuInflater?.inflate(R.menu.contextual_action_bar, menu)
-        return true
-    }
-
-    override fun onPrepareActionMode(mode: ActionMode?, menu: Menu?): Boolean {
-        return false
-    }
-
-    override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
-        return when (item!!.itemId) {
-            R.id.favorite -> {
-                //TODO Add favorite identifier to selected image
-                true
-            }
-            R.id.share -> {
-                //TODO Share the selected image via email
-                true
-            }
-            else -> false
-        }
-    }
-
-    override fun onDestroyActionMode(mode: ActionMode?) {
-        actionMode = null
-    }
-
-
 }

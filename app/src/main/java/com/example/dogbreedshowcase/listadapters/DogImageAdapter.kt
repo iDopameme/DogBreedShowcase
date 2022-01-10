@@ -19,8 +19,6 @@ class DogImageAdapter(private val context: Context,
                       private val onClickListener: OnClickListener
 ) : RecyclerView.Adapter<DogImageAdapter.ViewHolder>() {
 
-    var tracker: SelectionTracker<Long>? = null
-
     interface OnClickListener {
         fun onImageClick(dogImage: DogImage)
     }
@@ -38,12 +36,10 @@ class DogImageAdapter(private val context: Context,
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val dogBreedImage = itemView.findViewById<ImageView>(R.id.dogBreedImage)
-
         fun bind(image: DogImage) {
             Picasso.get().load(image.imageUrl).into(dogBreedImage)
-            itemView.setOnClickListener {
-                onClickListener.onImageClick(image)
-                Log.e(ContentValues.TAG, "TESTING IF THE BUTTON CLICK WORKS")
+            itemView.setOnLongClickListener {
+                itemView.showContextMenu()
             }
         }
     }

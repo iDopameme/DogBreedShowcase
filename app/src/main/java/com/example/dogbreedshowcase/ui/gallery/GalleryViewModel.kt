@@ -45,15 +45,13 @@ class GalleryViewModel : ViewModel() {
         }
     }
 
+    fun setFavoriteStatus(dogImage: DogImage) {
+        dogImage.favoriteImage = !dogImage.favoriteImage
+    }
+
     fun DogJSONImage.toDomain(): List<DogImage> {
         return this.message.map {
             DogImage(imageUrl = it)
         }
     }
-
-    // add favorite &
-    fun displayPopupOptions(dogImage: DogImage) {
-        Log.e(TAG, "TESTING IF THE BUTTON CLICK WORKS")
-    }
-
 }

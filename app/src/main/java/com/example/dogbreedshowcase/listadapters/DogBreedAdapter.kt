@@ -43,9 +43,4 @@ class DogBreedAdapter(private val context: Context,
             }
         }
     }
-
-
-//    inner class subViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        private val subDogBreedName = itemView.findViewById<TextView>()
-//    }
 }

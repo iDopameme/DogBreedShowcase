@@ -39,16 +39,6 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onCreateContextMenu(
-        menu: ContextMenu?,
-        v: View?,
-        menuInfo: ContextMenu.ContextMenuInfo?,
-    ) {
-        super.onCreateContextMenu(menu, v, menuInfo)
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.contextual_action_bar, menu)
-    }
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.fragmentContainerView)
         return navController.navigateUp(appBarConfiguration) ||

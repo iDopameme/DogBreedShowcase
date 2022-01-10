@@ -69,12 +69,10 @@ class MainDogFragment : Fragment() {
 
         context?.let {
             binding.dogsRecyclerview.recyclerViewLineDivider(it)
+            viewModel.getDogs()
         }
 
         binding.dogsRecyclerview.adapter = dogBreedAdapter
         binding.dogsRecyclerview.layoutManager = LinearLayoutManager(requireContext())
-
-        viewModel.getDogs()
-
     }
 }
