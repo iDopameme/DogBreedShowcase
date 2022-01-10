@@ -13,3 +13,4 @@ App contains two UI Fragments:
 2. Dog Gallery Screen
 - Displays a grid of images based on the selected dog from the previous screen
 - Allows users to favorite a specific image from the grid of images on display
+- Users can favorite & share images by pressing & holding on the image of their choice
