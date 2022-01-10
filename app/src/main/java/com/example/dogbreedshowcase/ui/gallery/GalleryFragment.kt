@@ -95,7 +95,7 @@ class GalleryFragment : Fragment() {
 
         dogImageAdapter = DogImageAdapter(requireContext(), dogImages, object : DogImageAdapter.OnClickListener {
             override fun onImageClick(dogImage: DogImage) {
-                TODO("Not yet implemented")
+                TODO("Not yet implemented. Need to pass dogImage parameter to context options")
             }
         })
 
